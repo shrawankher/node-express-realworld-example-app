@@ -39,6 +39,8 @@ router.put('/user', auth.required, function(req, res, next){
   }).catch(next);
 });
 
+// user login
+// User will login with this api and generate token
 router.post('/users/login', function(req, res, next){
   if(!req.body.user.email){
     return res.status(422).json({errors: {email: "can't be blank"}});
