@@ -62,9 +62,14 @@ router.post('/users/login', function(req, res, next){
   })(req, res, next);
 });
 
+/***
+ * User registration 
+ * User will register with user name ,email and his chossen password.  
+ *  
+ * */ 
 router.post('/users', function(req, res, next){
   var user = new User();
-
+  console.log('New user entry to be made.');
   user.username = req.body.user.username;
   user.email = req.body.user.email;
   user.setPassword(req.body.user.password);
